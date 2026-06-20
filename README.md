@@ -17,16 +17,24 @@ Just right click on "Config Backup.ps1 and select "Run with PowerShell" or run 
 
 
 
-## Back-up \& Restore:
+## Features
 
-* Adobe CameraRAW
-* Adobe Lightroom Classic
-* Adobe Photoshop
-* GeoSetter
-* Lazarus IDE
-* Microsoft PowerShell
-* Microsoft Windows Terminal
-* VLC
+* Back-up \& Restore:
+
+  * Adobe CameraRAW
+  * Adobe Lightroom Classic
+  * Adobe Photoshop
+  * GeoSetter
+  * Lazarus IDE
+  * Microsoft PowerShell
+  * Microsoft Windows Terminal
+  * VLC
+
+
+
+## Statistics
+
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/ConfigBackup-PS/total)
 
 
 
