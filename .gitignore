@@ -1,7 +1,38 @@
-#My ignored files
-~Backup~
-~ToDo~
-Backup
-Drivers
-Upload.bat
-Upload.ps1
+#------------------------------------------------
+# © 2026 Remus Rigo
+#    2026-06-18
+#------------------------------------------------
+
+#------------------------------------------------
+# My ignored files
+#
+Sync.bat
+Sync.ps1
+*.psd
+
+#------------------------------------------------
+# Windows ignored files
+#
+[Dd]esktop.ini
+[Tt]humbs.db
+
+#------------------------------------------------
+# Delphi ignored files
+#
+[Bb]in
+[Oo]bj
+__history
+__recovery
+*.dproj.local
+*.dsk
+*.dsv
+*.groupproj.local
+*.identcache
+*.tvsconfig
+
+#------------------------------------------------
+# Visual Studio
+#
+.vs/
+[Bb]in
+[Oo]bj
