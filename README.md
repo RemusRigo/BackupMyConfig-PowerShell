@@ -36,7 +36,7 @@ Just right click on "Config Backup.ps1 and select "Run with PowerShell" or run 
 
 ![status](https://img.shields.io/badge/status-in%20progress-orange)
 <br>
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/ConfigBackup-PS/total)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/ConfigBackup-PowerShell/total)
 
 
 
