@@ -1,14 +1,14 @@
 #--------------------------------------------------------------------------------------------------
-# Config Backup
+# Backup My Config
 #   © 2025 Remus Rigo
-#      v1.1 2026-05-05
+#      v1.1 2026-07-06
 #                                                   [System.Windows.Forms.MessageBox]::Show("Test")
 #--------------------------------------------------------------------------------------------------
 
 Clear-Host
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
-$appMainTitle = "Config Backup v1.1 by Remus Rigo"
+$appMainTitle = "Backup My Config v1.1 by Remus Rigo"
 $selectedApps = 01
 $selectedBackup = 0
 
@@ -341,6 +341,28 @@ function Backup-Apps
             }
 
             #---------------------------------------------------------------------------------------------------------------
+            "NuGet package manager for .NET" 
+            {
+               Add-Log "Backup: NuGet package manager for .NET: start"
+               $bkPath = Join-Path -Path $rootBkPath -ChildPath ".nuget\packages"
+               if (!(Test-Path -Path $bkPath))
+               {
+                  New-Item -ItemType Directory -Path $bkPath
+               }
+               if (Test-Path -Path "$($env:USERPROFILE)\.nuget\packages")
+               {
+                  Add-Log "Backup: NuGet package manager for .NET: configuration found"
+                  Copy-Item -Path "$($env:USERPROFILE)\.nuget\packages\*" -Destination $bkPath -Recurse -Force -ErrorAction SilentlyContinue
+                  Add-Log "Backup: NuGet package manager for .NET: file(s) copied"
+               }
+               else
+               {
+                  Add-Log "Backup: NuGet package manager for .NET: file(s) not found"
+               }
+               $lvApps.Items[$i].BackColor = [System.Drawing.Color]::FromArgb(200, 255, 200)
+            }
+
+            #---------------------------------------------------------------------------------------------------------------
             "VLC" 
             {
                Add-Log "Backup: VLC: start"
@@ -603,6 +625,30 @@ function Restore-Apps($backupPoint)
                $lvApps.Items[$i].BackColor = [System.Drawing.Color]::FromArgb(127, 217, 235)
             }
 
+            "NuGet package manager for .NET" #-----------------------------------------------------
+            {
+               Add-Log "Restore: NuGet package manager for .NET: start"
+               $bkPath = Join-Path -Path $rootBkPath -ChildPath ".nuget\packages"
+               if (Test-Path -Path $bkPath)
+               {
+                  Add-Log "Restore: NuGet package manager for .NET: backup found"
+                  if (Test-Path -Path "$($env:USERPROFILE)\.nuget\packages")
+                  {
+                     Copy-Item -Path $bkPath\* -Destination "$($env:USERPROFILE)\.nuget\packages" -Recurse -Force -ErrorAction SilentlyContinue
+                     Add-Log "Restore: NuGet package manager for .NET: file(s) copied"
+                  }
+                  else
+                  {
+                     Add-Log "Restore: NuGet package manager for .NET: destination not found"
+                  }
+               }
+               else
+               {
+                  Add-Log "Restore: NuGet package manager for .NET: backup not found"
+               }
+               $lvApps.Items[$i].BackColor = [System.Drawing.Color]::FromArgb(127, 217, 235)
+            }
+
             "VLC" #---------------------------------------------------------------------------------------------------------
             {
                Add-Log "Restore: VLC: start"
@@ -648,6 +694,7 @@ function Load-Apps
    Add-Item "GeoSetter"
    Add-Item "Lazarus"
    Add-Item "Microsoft Windows Terminal"
+   Add-Item "NuGet package manager for .NET"
    Add-Item "VLC"
 
    $lvApps.AutoResizeColumn(0, [System.Windows.Forms.ColumnHeaderAutoResizeStyle]::ColumnContent)

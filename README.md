@@ -28,20 +28,22 @@ Just right click on "Config Backup.ps1 and select "Run with PowerShell" or run 
   * Lazarus IDE
   * Microsoft PowerShell
   * Microsoft Windows Terminal
+  * NuGet package manager
   * VLC
 
 
 
 ## Statistics
 
-![status](https://img.shields.io/badge/status-in%20progress-orange)
+!\[status](https://img.shields.io/badge/status-in%20progress-orange)
 <br>
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/ConfigBackup-PowerShell/total)
+!\[GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/ConfigBackup-PowerShell/total)
 
 
 
 ## Roadmap
 
+* 2026-07-06 Add: NuGet package manager
 * 2026-05-05 Reorganize GUI
 * 2025-10-22 Add: Backup/Restore: PowerShell profile
 * 2025-08-03 Add: rewrite the Restore function
