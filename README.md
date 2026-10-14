@@ -36,7 +36,6 @@ See the [User's Guide](UsersGuide.md) for requirements, installation and usage.
 ## Statistics
 
 ![PowerShell](https://img.shields.io/badge/Language-PowerShell-blue)
-![VS](https://img.shields.io/badge/IDE-Visual%20Studio-purple)
 <br>
 ![status](https://img.shields.io/badge/status-in%20progress-orange) 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/BackupMyConfig-PowerShell/total)
